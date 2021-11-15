@@ -98,8 +98,6 @@ img {
 }
 .site-nav .item {
   margin-right: 50px;
-  padding-top: 32px;
-  padding-bottom: 32px;
 }
 
 .site-nav .item:last-child {
@@ -113,11 +111,30 @@ img {
   font-size: 14px;
   line-height: 1.1px;
   letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link.current {
   color: var(--accent-color);
+  position: relative;
 }
+
+.site-nav .link.current::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  height: 4px;
+  width: 100%;
+
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
 .site-nav .link:hover,
 .site-nav .link:focus,
 .auth-nav .link:hover,
@@ -168,9 +185,6 @@ img {
 
 /* -------------------------Hero-------------- */
 .hero {
-  /* text-align: center;
-  padding-top: 200px;
-  padding-bottom: 200px;  */
   background-color: var(--background-black);
 }
 
@@ -183,7 +197,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(./images/bgi.jpg);
+    url(../images/bgi.jpg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -263,9 +277,26 @@ img {
 }
 .work-section .item {
   margin-right: 30px;
+  position: relative;
 }
 .work-section .item:last-child {
   margin-right: 0;
+}
+
+.work-text {
+  position: absolute;
+  width: 100%;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  padding: 27px 0 27px 0;
+  margin: 0;
+  left: 0;
+  bottom: 0;
 }
 
 /* Team */
@@ -325,6 +356,8 @@ img {
   justify-content: center;
   border-radius: 50%;
   color: var(--icon-gray-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .networks-link:hover,
@@ -433,6 +466,9 @@ img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background-color: var(--icon-gray-footer);
   color: var(--white-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* --------------Porfolio-------------------- */
 
